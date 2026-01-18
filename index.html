@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KernelCore.tsx - PROJECT-ALPHA - Visual Studio Code</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Activity Bar -->
+        <div class="activity-bar">
+            <div class="top-icons">
+                <div class="icon active"><i class="far fa-copy"></i></div>
+                <div class="icon"><i class="fas fa-search"></i></div>
+                <div class="icon"><i class="fas fa-code-branch"></i></div>
+                <div class="icon"><i class="fas fa-bug"></i></div>
+                <div class="icon"><i class="fas fa-th-large"></i></div>
+            </div>
+            <div class="bottom-icons">
+                <div class="icon"><i class="far fa-user-circle"></i></div>
+                <div class="icon" id="settings-btn"><i class="fas fa-cog"></i></div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-title">
+                <span>EXPLORER</span>
+                <span class="dots">...</span>
+            </div>
+            <div class="sidebar-content">
+                <div class="section-header"><i class="fas fa-chevron-down"></i> PROJECT-ALPHA</div>
+                <div class="file-tree">
+                    <div class="folder"><i class="fas fa-chevron-down"></i> src</div>
+                    <div class="file indent"><i class="fab fa-js" style="color: #f1e05a;"></i> app.js</div>
+                    <div class="file indent"><i class="fab fa-css3-alt" style="color: #563d7c;"></i> styles.css</div>
+                    <div class="file indent active"><i class="fab fa-react" style="color: #61dafb;"></i> KernelCore.tsx</div>
+                    <div class="file indent"><i class="fas fa-cogs" style="color: #e34c26;"></i> utils.ts</div>
+                    <div class="folder indent"><i class="fas fa-chevron-right"></i> services</div>
+                    <div class="folder"><i class="fas fa-chevron-right"></i> components</div>
+                    <div class="folder"><i class="fas fa-chevron-right"></i> __tests__</div>
+                    <div class="file"><i class="fab fa-git-alt" style="color: #e44d26;"></i> .gitignore</div>
+                    <div class="file"><i class="fab fa-npm" style="color: #cb3837;"></i> package.json</div>
+                    <div class="file"><i class="fab fa-docker" style="color: #2496ed;"></i> Dockerfile</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Editor Area -->
+        <div class="editor-area">
+            <!-- Tabs -->
+            <div class="tabs">
+                <div class="tab active">
+                    <i class="fab fa-react" style="color: #61dafb;"></i> KernelCore.tsx <span class="close">×</span>
+                </div>
+                <div class="tab">
+                    <i class="fab fa-js" style="color: #f1e05a;"></i> app.js <span class="close">×</span>
+                </div>
+                <div class="tab">
+                    <i class="fas fa-terminal" style="color: #cccccc;"></i> build.log <span class="close">×</span>
+                </div>
+            </div>
+            
+            <!-- Breadcrumbs -->
+            <div class="breadcrumbs">
+                src > <i class="fab fa-react"></i> KernelCore.tsx > <span class="symbol">Dashboard</span>
+            </div>
+
+            <!-- Split View: Code + Terminal -->
+            <div class="split-container">
+                <!-- Code Content -->
+                <div class="code-container" id="code-container">
+                    <div class="line-numbers" id="line-numbers">1</div>
+                    <pre><code id="code-display"><span class="cursor">|</span></code></pre>
+                </div>
+
+                <!-- Terminal Panel -->
+                <div class="terminal-panel">
+                    <div class="terminal-header">
+                        <span class="t-tab active">PROBLEMS</span>
+                        <span class="t-tab">OUTPUT</span>
+                        <span class="t-tab">DEBUG CONSOLE</span>
+                        <span class="t-tab active-underline">TERMINAL</span>
+                        <span class="t-tab">GITLENS</span>
+                        <div class="t-actions">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-trash"></i>
+                            <i class="fas fa-chevron-down"></i>
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                    <div class="terminal-body" id="terminal-body">
+                        <div class="term-line">Windows PowerShell</div>
+                        <div class="term-line">Copyright (C) Microsoft Corporation. All rights reserved.</div>
+                        <div class="term-line">&nbsp;</div>
+                        <div class="term-line"><span class="term-path">PS C:\Projects\Alpha></span> npm run start:dev</div>
+                        <div class="term-line"><span class="term-green">[WAIT]</span> Compiling...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+        <div class="left">
+            <div class="item remote"><i class="fas fa-wifi"></i> WSL: Ubuntu</div>
+            <div class="item"><i class="fas fa-code-branch"></i> feature/core-engine*</div>
+            <div class="item"><i class="fas fa-sync-alt"></i></div>
+            <div class="item"><i class="fas fa-times-circle"></i> 0 <i class="fas fa-exclamation-triangle"></i> 0</div>
+        </div>
+        <div class="right">
+            <div class="item">Ln <span id="cursor-line">1</span>, Col <span id="cursor-col">1</span></div>
+            <div class="item">Spaces: 4</div>
+            <div class="item">UTF-8</div>
+            <div class="item">TypeScript React</div>
+            <div class="item"><i class="fas fa-check-double"></i> Prettier</div>
+            <div class="item"><i class="far fa-bell"></i></div>
+        </div>
+    </div>
+
+    <!-- Hidden Settings Modal -->
+    <div id="settings-modal" class="settings-modal hidden">
+        <div class="settings-content">
+            <h3>Secret Settings (Shh!)</h3>
+            
+            <div class="setting-group">
+                <label>Load Novel (.txt):</label>
+                <input type="file" id="file-input" accept=".txt">
+                <div class="hint">File content will replace code.</div>
+            </div>
+
+            <div class="setting-group">
+                <label>Typing Speed (Chars per key): <span id="speed-val">5</span></label>
+                <input type="range" id="speed-range" min="1" max="50" value="5">
+            </div>
+
+            <div class="setting-group">
+                <label>Burst Mode (Random speed up):</label>
+                <input type="checkbox" id="burst-check" checked>
+            </div>
+
+            <button id="close-settings">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
