@@ -7,7 +7,6 @@ A hyper-realistic VS Code simulation designed for... *productivity*. It looks ex
 
 這是一個超逼真的 VS Code 模擬器，專為...「生產力」設計。外觀跟真的 VS Code 一模一樣，不管你按什麼鍵，它都會自動打出專業的程式碼。甚至還有隱藏的小說閱讀功能，讓你在上班時間神不知鬼不覺地看小說。
 
-<img width="1200" height="800" alt="image" src="https://github.com/user-attachments/assets/d85019b2-c798-4772-852f-1b1adef443a0" />
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Mac%20%7C%20Linux-lightgrey)
